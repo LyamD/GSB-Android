@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="fr.durandlyam.gsb.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="fr.durandlyam.gsb.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_listeVisitesFragment"
+            app:destination="@id/listeVisitesFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_newVisiteFragment"
+            app:destination="@id/newVisiteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listeVisitesFragment"
+        android:name="fr.durandlyam.gsb.visites.ListeVisitesFragment"
+        android:label="fragment_liste_visites"
+        tools:layout="@layout/fragment_liste_visites" />
+    <fragment
+        android:id="@+id/newVisiteFragment"
+        android:name="fr.durandlyam.gsb.NewVisiteFragment"
+        android:label="fragment_new_visite"
+        tools:layout="@layout/fragment_new_visite" />
+</navigation>
